@@ -17,7 +17,8 @@ module MercadoPago
       end
 
       def self.refund(access_token, payment_id)
-        MercadoPago::Request.wrap_post("/v1/payments/#{payment_id}/refunds?access_token=#{access_token}", {})
+        payload = JSON.generate({})
+        MercadoPago::Request.wrap_post("/v1/payments/#{payment_id}/refunds?access_token=#{access_token}", payload)
       end
 
       def self.partial_refund(access_token, payment_id, payload)
