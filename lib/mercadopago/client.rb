@@ -282,6 +282,10 @@ module MercadoPago
        MercadoPago::CustomCheckout::Payments.update(@custom_checkout_access_token, payment_id, data)
     end
 
+    def refund(payment_id)
+      MercadoPago::CustomCheckout::Payments.refund(@custom_checkout_access_token, payment_id)
+    end
+
     def partial_refund(payment_id, data)
       MercadoPago::CustomCheckout::Payments.partial_refund(@custom_checkout_access_token, payment_id, data)
     end
