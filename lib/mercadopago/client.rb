@@ -301,7 +301,7 @@ module MercadoPago
     # - auth: the authentication hash returned by MercadoPago.
     #
     def load_tokens(auth)
-      if auth['status'] == "200"
+      if auth['access_token']
         @access_token = auth['access_token']
       else
         raise AccessError, auth['message']
